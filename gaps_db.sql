@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2026 at 11:47 AM
+-- Generation Time: Oct 22, 2026 at 02:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -49,6 +49,7 @@ CREATE TABLE `activity_completion` (
   `activity_id` int(11) NOT NULL,
   `content` varchar(32) DEFAULT NULL,
   `image_path` varchar(128) NOT NULL,
+  `date_joined` datetime NOT NULL,
   `date_completed` datetime DEFAULT NULL,
   `status` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -78,7 +79,7 @@ CREATE TABLE `claimed_rewards` (
   `ledger_id` int(11) NOT NULL,
   `redeem_code` varchar(8) NOT NULL,
   `status` varchar(8) NOT NULL,
-  `used_date` date NOT NULL
+  `used_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
