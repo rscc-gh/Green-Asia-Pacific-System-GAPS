@@ -1,0 +1,70 @@
+/* Header */
+.visitor-header {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.visitor-header-container {
+    width: 100%;
+    min-height: 75px;
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.visitor-logo {
+    color: #23845b;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Navigation */
+.visitor-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(12px, 2.5vw, 36px);
+}
+
+.visitor-nav-link {
+    white-space: nowrap;
+}
+
+.visitor-nav-link:hover,
+.visitor-nav-link.active {
+    color: #23845b;
+}
+
+/* Sign up */
+.signup-link {
+    background-color: #23845b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+.signup-link:hover {
+    background-color: #196b48;
+    color: white;
+}
+
+/* Log in */
+.login-link {
+    border: 1px solid #23845b;
+    color: #23845b;
+    padding: 9px 20px;
+    border-radius: 6px;
+}
+
+.login-link:hover {
+    background-color: #f0fdf4;
+}
