@@ -21,7 +21,7 @@
             <nav class="visitor-nav" id="visitorNav">
                 <a href="index.php" class="visitor-nav-link <?= $currentPage == 'index.php' ? 'active' : ''?>" >Home</a>
                 <a href="index.php" class="visitor-nav-link <?= $currentPage == 'about.php' ? 'active' : ''?>">About</a>
-                <a href="index.php" class="visitor-nav-link <?= $currentPage == 'contact.php' ? 'active' : ''?>">Contact</a>
+                <a href="index.php" class="visitor-nav-link <?= $currentPage == 'contact.php' ? 'active' : ''?>">Contact Us</a>
                 <a href="index.php" class="visitor-nav-link signup-link">Sign Up</a>
                 <a href="index.php" class="visitor-nav-link login-link">Log In</a>
             </nav>
