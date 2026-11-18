@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/user-header.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/sidebar.css">
+    
+    <script src="/assets/js/sidebar.js" defer></script>
 </head>
 
 <body>
@@ -18,20 +21,30 @@
         include __DIR__ . '/../../layouts/user-header.php';
     ?>
     
-    <!-- Main Body -->
-    <main>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-    </main>
+    <!-- Main Layout + Sidebar -->
+    <div class="main-layout">
+        
+        <!-- Sidebar -->
+        <?php
+            include __DIR__ . '/../../layouts/sidebar.php';
+        ?>
+        
+        <!-- Main Body -->
+        <main>
+            <h>You can scroll down!</h>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h>You can scroll down!</h>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h>You can scroll down!</h>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h>You can scroll down!</h>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h>You can scroll down!</h>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h>You can scroll down!</h>
+        </main>
+        
+    </div>
     
     <!-- Footer -->
     <?php
