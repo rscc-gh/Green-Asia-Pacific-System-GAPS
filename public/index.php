@@ -1,40 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitor Page</title>
+
+<!-- Reroute -->
+<?php
+
+    $page = $_GET['page'] ?? 'home';
+
+    switch ($page) {
+
+        case 'home':
+            require '../app/views/visitor/home.php';
+            break;
+
+        case 'dashboard':
+            require '../app/views/user/dashboard.php';
+            break;
+
+        case 'profile':
+            require '../app/views/user/profile.php';
+            break;
+
+        default:
+            http_response_code(404);
+            require '../app/views/errors/404.php';
+            break;
+    }
     
-    <link rel="stylesheet" href="assets/css/global.css">
-    <link rel="stylesheet" href="assets/css/visitor-header.css">
-    <link rel="stylesheet" href="assets/css/visitor-footer.css">
-</head>
-<body>
-    
-    <!-- Header -->
-    <?php
-        include __DIR__ . '/../app/layouts/visitor-header.php';
-    ?>
-    
-    <!-- Main Body -->
-    <main>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h>You can scroll down!</h>
-    </main>
-    
-    <!-- Footer -->
-    <?php
-        include __DIR__ . '/../app/layouts/visitor-footer.php';
-    ?>
-    
-</body>
-</html>
+?>

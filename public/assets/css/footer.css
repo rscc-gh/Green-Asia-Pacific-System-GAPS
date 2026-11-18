@@ -1,5 +1,5 @@
 /* Footer */
-.visitor-footer {
+.footer {
     width: 100%;
     background-color: #ffffff;
     border-top: 1px solid #e5e7eb;
@@ -7,14 +7,14 @@
     z-index: 1000;
 }
 
-.visitor-footer-container {
+.footer-container {
     width: 100%;
     padding: 40px 4% 20px;
     box-sizing: border-box;
 }
 
 /* Main Footer */
-.visitor-footer-main {
+.footer-main {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 40px;
@@ -22,14 +22,14 @@
 }
 
 /* Brand */
-.visitor-footer-logo {
+.footer-logo {
     color: #23845b;
     font-size: 24px;
     font-weight: 700;
     text-decoration: none;
 }
 
-.visitor-footer-brand p {
+.footer-brand p {
     max-width: 350px;
     color: #6b7280;
     font-size: 14px;
@@ -37,37 +37,37 @@
 }
 
 /* Footer Sections */
-.visitor-footer-section {
+.footer-section {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.visitor-footer-section h3 {
+.footer-section h3 {
     margin: 0 0 5px;
     color: #111827;
     font-size: 15px;
 }
 
-.visitor-footer-section a {
+.footer-section a {
     color: #6b7280;
     font-size: 14px;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.visitor-footer-section a:hover {
+.footer-section a:hover {
     color: #23845b;
 }
 
 /* Bottom Section */
-.visitor-footer-bottom {
+.footer-bottom {
     border-top: 1px solid #e5e7eb;
     padding-top: 20px;
     text-align: center;
 }
 
-.visitor-footer-bottom p {
+.footer-bottom p {
     margin: 0;
     color: #9ca3af;
     font-size: 13px;
