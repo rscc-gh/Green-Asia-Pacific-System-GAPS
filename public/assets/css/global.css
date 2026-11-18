@@ -9,6 +9,15 @@ body {
     flex-direction: column;
 }
 
+/* Sidebar + main content wrapper */
+.main-layout {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+/* Main content body */
 main {
     flex: 1;
+    min-width: 0;
 }
