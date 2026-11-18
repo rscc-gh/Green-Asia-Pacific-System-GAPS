@@ -10,20 +10,20 @@
 <body>
     
     <?php
-        $currentPage = basename($_SERVER['PHP_SELF']);
+        $currentPage = $_GET['page'] ?? 'home';
     ?>
 
     <header class="visitor-header">
         <div class="visitor-header-container">
 
-            <a href="/" class="visitor-logo">Logo</a>
+            <a href="/?page=home" class="visitor-logo">Logo</a>
 
             <nav class="visitor-nav" id="visitorNav">
-                <a href="index.php" class="visitor-nav-link <?= $currentPage == 'index.php' ? 'active' : ''?>" >Home</a>
-                <a href="index.php" class="visitor-nav-link <?= $currentPage == 'about.php' ? 'active' : ''?>">About</a>
-                <a href="index.php" class="visitor-nav-link <?= $currentPage == 'contact.php' ? 'active' : ''?>">Contact Us</a>
-                <a href="index.php" class="visitor-nav-link signup-link">Sign Up</a>
-                <a href="index.php" class="visitor-nav-link login-link">Log In</a>
+                <a href="/?page=home" class="visitor-nav-link <?= $currentPage == 'home' ? 'active' : ''?>" >Home</a>
+                <a href="/?page=about" class="visitor-nav-link <?= $currentPage == 'about' ? 'active' : ''?>">About</a>
+                <a href="/?page=contact" class="visitor-nav-link <?= $currentPage == 'contact' ? 'active' : ''?>">Contact Us</a>
+                <a href="/?page=signup" class="visitor-nav-link signup-link">Sign Up</a>
+                <a href="/?page=login" class="visitor-nav-link login-link">Log In</a>
             </nav>
 
         </div>

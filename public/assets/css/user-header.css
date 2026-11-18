@@ -1,0 +1,75 @@
+/* Header */
+.main-header {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header-container {
+    width: 100%;
+    min-height: 75px;
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Left section: Logo + Navigation */
+.main-header-left {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 4vw, 60px);
+}
+
+/* Logo */
+.main-logo {
+    color: #23845b;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 3vw, 48px);
+}
+
+.main-nav-link {
+    white-space: nowrap;
+    text-decoration: none;
+    color: #333333;
+}
+
+.main-nav-link:hover,
+.main-nav-link.active {
+    color: #23845b;
+}
+
+/* Right section */
+.main-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Profile */
+.profile-link {
+    text-decoration: none;
+    color: #23845b;
+    border: 1px solid #23845b;
+    padding: 9px 20px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.profile-link:hover {
+    background-color: #f0fdf4;
+}
