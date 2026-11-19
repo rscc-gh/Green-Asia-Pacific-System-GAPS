@@ -26,8 +26,8 @@
                 <!-- Quick Links -->
                 <div class="footer-section">
                     <h3>Explore</h3>
-                    <a href="/?page=home">About</a>
-                    <a href="/?page=home">Contact Us</a>
+                    <a href="/?page=about">About</a>
+                    <a href="/?page=contact">Contact Us</a>
                 </div>
 
                 <!-- Quick Contacts -->
