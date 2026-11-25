@@ -1,0 +1,31 @@
+[Wed Nov 25 18:47:06 2026] PHP 8.5.13 Development Server (http://127.0.0.1:8000) started
+[Wed Nov 25 18:47:12 2026] 127.0.0.1:60133 Accepted
+[Wed Nov 25 18:47:12 2026] 127.0.0.1:60133 [200]: GET /?page=manageaccounts
+[Wed Nov 25 18:47:12 2026] 127.0.0.1:60133 Closing
+[Wed Nov 25 18:47:21 2026] 127.0.0.1:60138 Accepted
+[Wed Nov 25 18:47:21 2026] 127.0.0.1:60138 [200]: GET /?page=manageaccounts
+[Wed Nov 25 18:47:21 2026] 127.0.0.1:60138 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60142 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60142 [200]: GET /?page=manageaccounts
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60142 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60144 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60145 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60146 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60144 [200]: GET /assets/css/global.css
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60145 [200]: GET /assets/css/user-header.css
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60146 [200]: GET /assets/css/footer.css
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60144 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60145 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60146 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60147 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60148 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60147 [200]: GET /assets/css/sidebar.css
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60148 [200]: GET /assets/css/manageaccounts.css
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60147 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60148 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60150 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60150 [200]: GET /assets/js/sidebar.js
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60150 Closing
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60151 Accepted
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60151 [200]: GET /assets/js/manageaccounts.js
+[Wed Nov 25 18:47:22 2026] 127.0.0.1:60151 Closing
