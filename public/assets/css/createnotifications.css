@@ -1,0 +1,264 @@
+/* Create Announcements page */
+.page-main {
+    padding: 22px 24px 48px;
+    background: #f5f6f8;
+}
+
+/* Heading */
+.page-head {
+    margin-bottom: 16px;
+}
+
+.page-head h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.page-sub {
+    margin: 4px 0 0;
+    font-size: 12.5px;
+    color: #6b7280;
+}
+
+/* Buttons (shared) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    color: #fff;
+    background: #23845b;
+    border-color: #23845b;
+}
+
+.btn-primary:hover {
+    background: #1d6f4c;
+    border-color: #1d6f4c;
+}
+
+.btn-ghost {
+    color: #374151;
+    background: #fff;
+    border-color: #d1d5db;
+}
+
+.btn-ghost:hover {
+    background: #f9fafb;
+}
+
+/* Compose card */
+.compose-card {
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.compose-card textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    resize: vertical;
+    min-height: 140px;
+}
+
+.compose-card textarea:focus {
+    outline: none;
+    border-color: #23845b;
+    box-shadow: 0 0 0 3px rgba(35, 132, 91, 0.12);
+}
+
+.compose-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.compose-count {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.compose-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Search */
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.filter-search {
+    position: relative;
+    flex: 1 1 240px;
+    max-width: 320px;
+}
+
+.filter-search i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12.5px;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.filter-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px 9px 34px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.filter-search input:focus {
+    outline: none;
+    border-color: #23845b;
+    box-shadow: 0 0 0 3px rgba(35, 132, 91, 0.12);
+}
+
+/* Table */
+.table-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #374151;
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 12px 16px;
+    color: #374151;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.row-btn {
+    padding: 5px 12px;
+    font-family: inherit;
+    font-size: 12px;
+    color: #374151;
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.row-btn:hover {
+    background: #f3f4f6;
+}
+
+.table-placeholder td {
+    padding: 36px 16px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+/* Pagination */
+.pager {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.pager-btn {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-family: inherit;
+    font-size: 12.5px;
+    color: #374151;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pager-btn:hover {
+    background: #f9fafb;
+}
+
+.pager-btn.is-current {
+    color: #fff;
+    background: #23845b;
+    border-color: #23845b;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .page-main {
+        padding: 16px 14px 36px;
+    }
+
+    .compose-actions {
+        width: 100%;
+    }
+
+    .compose-actions .btn {
+        flex: 1;
+    }
+
+    .data-table th:nth-child(3),
+    .data-table td:nth-child(3) {
+        display: none;
+    }
+}

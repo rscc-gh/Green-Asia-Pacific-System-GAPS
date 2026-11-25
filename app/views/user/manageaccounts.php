@@ -44,16 +44,21 @@ include __DIR__ . '/../../config/conn.php';
             <div class="page-head">
                 <div>
                     <h2>Manage Accounts</h2>
-                    <p class="page-sub">No accounts yet.</p>
+                    <p class="page-sub">Admin &rsaquo; Manage Accounts</p>
                 </div>
+
+                <a href="#" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Account
+                </a>
             </div>
 
             <!-- Filters -->
-            <div class="account-tools">
+            <div class="filter-row">
 
-                <div class="account-search">
+                <div class="filter-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" id="accountSearch" placeholder="Search name, username or email">
+                    <input type="search" id="accountSearch" placeholder="Search username, name or email">
                 </div>
 
                 <select id="roleFilter" aria-label="Filter by role">
@@ -74,21 +79,23 @@ include __DIR__ . '/../../config/conn.php';
             </div>
 
             <!-- Accounts table -->
-            <div class="account-table-wrap">
-                <table class="account-table">
+            <div class="table-card">
+                <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Account</th>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Full Name</th>
                             <th>Email</th>
-                            <th>Mobile</th>
                             <th>Role</th>
                             <th>Status</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
                     <tbody id="accountsBody">
                         <tr class="table-placeholder">
-                            <td colspan="5">Accounts will show up here.</td>
+                            <td colspan="7">Accounts will show up here.</td>
                         </tr>
                     </tbody>
                 </table>
