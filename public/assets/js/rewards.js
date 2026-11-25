@@ -1,3 +1,4 @@
+// Reward Card/List View
 document.addEventListener("DOMContentLoaded", function () {
 
     const toggleButtons = document.querySelectorAll(".view-toggle button");
@@ -28,8 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
+// Reward Popup Modal
 const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('closeBtn');
 const redeemBtn = document.getElementById('redeemBtn'); // null for non-members

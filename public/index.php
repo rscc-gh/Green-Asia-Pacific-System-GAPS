@@ -48,6 +48,10 @@
             require '../app/views/user/community.php';
             break;
 
+        case 'redeem':
+            require '../app/actions/redeem.php';
+            break;
+
         default:
             http_response_code(404);
             require '../app/views/errors/404.php';
