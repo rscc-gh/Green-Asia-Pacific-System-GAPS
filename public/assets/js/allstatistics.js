@@ -1,5 +1,4 @@
-// Charts are drawn here, not in PHP.
-// Replace these sample figures with the real statistics later.
+
 const postStats = {
     totalPosts: 148,
     totalComments: 392,

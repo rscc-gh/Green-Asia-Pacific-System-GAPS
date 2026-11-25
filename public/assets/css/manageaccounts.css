@@ -1,10 +1,10 @@
-/* Manage Accounts page */
+
 .page-main {
     padding: 22px 24px 48px;
     background: #f5f6f8;
 }
 
-/* Heading row */
+
 .page-head {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +27,7 @@
     color: #6b7280;
 }
 
-/* Buttons */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -69,7 +69,7 @@
     font-size: 12px;
 }
 
-/* Filters */
+
 .filter-row {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +124,7 @@
     box-shadow: 0 0 0 3px rgba(35, 132, 91, 0.12);
 }
 
-/* Table */
+
 .table-card {
     background: #fff;
     border: 1px solid #e5e7eb;
@@ -162,7 +162,7 @@
     border-bottom: none;
 }
 
-/* Row actions */
+
 .row-actions {
     display: flex;
     flex-wrap: wrap;
@@ -194,14 +194,14 @@
     background: #fee2e2;
 }
 
-/* Placeholder row */
+
 .table-placeholder td {
     padding: 36px 16px;
     text-align: center;
     color: #9ca3af;
 }
 
-/* Responsive */
+
 @media (max-width: 900px) {
     .data-table th:nth-child(4),
     .data-table td:nth-child(4) {

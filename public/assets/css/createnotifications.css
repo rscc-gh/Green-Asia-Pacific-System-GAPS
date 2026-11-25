@@ -1,10 +1,10 @@
-/* Create Announcements page */
+
 .page-main {
     padding: 22px 24px 48px;
     background: #f5f6f8;
 }
 
-/* Heading */
+
 .page-head {
     margin-bottom: 16px;
 }
@@ -22,7 +22,7 @@
     color: #6b7280;
 }
 
-/* Buttons (shared) */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -61,7 +61,7 @@
     background: #f9fafb;
 }
 
-/* Compose card */
+
 .compose-card {
     padding: 16px;
     margin-bottom: 16px;
@@ -153,7 +153,7 @@
     box-shadow: 0 0 0 3px rgba(35, 132, 91, 0.12);
 }
 
-/* Table */
+
 .table-card {
     background: #fff;
     border: 1px solid #e5e7eb;
@@ -212,7 +212,7 @@
     color: #9ca3af;
 }
 
-/* Pagination */
+
 .pager {
     display: flex;
     justify-content: flex-end;
@@ -243,7 +243,7 @@
     border-color: #23845b;
 }
 
-/* Responsive */
+
 @media (max-width: 640px) {
     .page-main {
         padding: 16px 14px 36px;

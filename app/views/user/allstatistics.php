@@ -25,20 +25,20 @@ include __DIR__ . '/../../config/conn.php';
 
 <body>
 
-    <!-- Header -->
+
     <?php
     include __DIR__ . '/../../layouts/user-header.php';
     ?>
 
-    <!-- Main Layout + Sidebar -->
+
     <div class="main-layout">
 
-        <!-- Sidebar -->
+
         <?php
         include __DIR__ . '/../../layouts/sidebar.php';
         ?>
 
-        <!-- Main Body -->
+
         <main class="page-main">
 
             <div class="page-head">
@@ -53,7 +53,7 @@ include __DIR__ . '/../../config/conn.php';
                 </a>
             </div>
 
-            <!-- Range -->
+
             <div class="filter-row">
 
                 <div class="filter-field">
@@ -73,7 +73,7 @@ include __DIR__ . '/../../config/conn.php';
 
             </div>
 
-            <!-- Summary -->
+
             <section class="stat-cards">
 
                 <article class="stat-card">
@@ -98,13 +98,13 @@ include __DIR__ . '/../../config/conn.php';
 
             </section>
 
-            <!-- Chart -->
+
             <section class="chart-card">
                 <div class="chart" id="postChart"></div>
                 <p class="chart-caption" id="chartCaption">Posts per period</p>
             </section>
 
-            <!-- Detail table -->
+
             <div class="table-card">
                 <table class="data-table">
                     <thead>
@@ -130,7 +130,7 @@ include __DIR__ . '/../../config/conn.php';
 
     </div>
 
-    <!-- Footer -->
+
     <?php
     include __DIR__ . '/../../layouts/footer.php';
     ?>

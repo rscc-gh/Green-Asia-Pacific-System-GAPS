@@ -56,6 +56,14 @@
             require '../app/views/user/createnotifications.php';
             break;
 
+        case 'myactivitiescreated':
+            require '../app/views/user/myactivitiescreated.php';
+            break;
+
+        case 'myrewardscreated':
+            require '../app/views/user/myrewardscreated.php';
+            break;
+
         case 'community':
             require '../app/views/user/community.php';
             break;
