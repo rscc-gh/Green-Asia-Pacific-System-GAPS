@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2026 at 10:42 AM
+-- Generation Time: Nov 25, 2026 at 07:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,196 @@ SET time_zone = "+00:00";
 --
 -- Database: `gaps_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activities`
+--
+
+CREATE TABLE `activities` (
+  `activity_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `points` int(11) NOT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
+  `status` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activity_completion`
+--
+
+CREATE TABLE `activity_completion` (
+  `user_id` int(11) NOT NULL,
+  `activity_id` int(11) NOT NULL,
+  `content` varchar(32) DEFAULT NULL,
+  `image_path` varchar(128) NOT NULL,
+  `date_joined` datetime NOT NULL,
+  `date_completed` datetime DEFAULT NULL,
+  `status` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `badges`
+--
+
+CREATE TABLE `badges` (
+  `badge_id` int(11) NOT NULL,
+  `badge_name` varchar(32) NOT NULL,
+  `image_path` varchar(128) NOT NULL,
+  `events_required` int(11) NOT NULL,
+  `goals_required` int(11) NOT NULL,
+  `streak_required` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `claimed_rewards`
+--
+
+CREATE TABLE `claimed_rewards` (
+  `ledger_id` int(11) NOT NULL,
+  `redeem_code` varchar(8) NOT NULL,
+  `status` varchar(8) NOT NULL,
+  `used_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `comment_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `status` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_streak`
+--
+
+CREATE TABLE `login_streak` (
+  `user_id` int(11) NOT NULL,
+  `current_streak` int(11) NOT NULL,
+  `longest_streak` int(11) NOT NULL,
+  `last_login` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_badges`
+--
+
+CREATE TABLE `member_badges` (
+  `user_id` int(11) NOT NULL,
+  `badge_id` int(11) NOT NULL,
+  `date_earned` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `notification_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `date_sent` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification_reads`
+--
+
+CREATE TABLE `notification_reads` (
+  `notification_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `points_ledger`
+--
+
+CREATE TABLE `points_ledger` (
+  `ledger_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `activity_id` int(11) DEFAULT NULL,
+  `reward_id` int(11) DEFAULT NULL,
+  `points` int(11) NOT NULL,
+  `date_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `post_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `image_path` varchar(128) NOT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `date_created` datetime NOT NULL,
+  `status` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rewards`
+--
+
+CREATE TABLE `rewards` (
+  `reward_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `rebate` int(11) NOT NULL,
+  `terms` varchar(255) DEFAULT NULL,
+  `expiry_date` date DEFAULT NULL,
+  `image_path` varchar(128) NOT NULL,
+  `point_cost` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `status` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rewards`
+--
+
+INSERT INTO `rewards` (`reward_id`, `user_id`, `title`, `discount`, `rebate`, `terms`, `expiry_date`, `image_path`, `point_cost`, `quantity`, `status`) VALUES
+(1, 3, 'Free Coffee', 0, 0, NULL, NULL, 'uploads/vouchers/free_coffee.png', 100, 5, 'Active'),
+(2, 3, '10% Discount', 10, 0, 'Minimum purchase of RM50', NULL, 'uploads/vouchers/discount_10off.png', 200, 3, 'Active'),
+(3, 7, 'RM50 Rebate on Travel', 0, 50, NULL, '2026-12-30', 'uploads/vouchers/travel_rm50off.png', 350, 1, 'Active'),
+(4, 11, 'RM10 Off', 0, 10, 'Minimum purchase of RM35', '2027-01-25', 'uploads/vouchers/shopping_rm10off.png', 100, 8, 'Active'),
+(5, 11, 'Free Gift', 0, 0, 'Minimum purchase of RM100', NULL, 'uploads/vouchers/free_gift.png', 200, 3, 'Active'),
+(6, 3, 'Free Drink', 0, 0, 'Must purchase Set A or Set B', '2027-01-01', 'uploads/vouchers/free_drink.png', 150, 4, 'Active'),
+(7, 3, 'Free Dessert', 0, 0, NULL, NULL, 'uploads/vouchers/free_dessert.png', 350, 10, 'Active'),
+(8, 7, 'Food 20% Off', 20, 0, 'Available at any XYZ Airport restuarant. Must be flying first class', '2026-12-19', 'uploads/vouchers/food_20off.png', 500, 3, 'Active');
 
 -- --------------------------------------------------------
 
@@ -43,18 +233,111 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `full_name`, `email`, `mob_num`, `user_role`, `status`) VALUES
-(1, 'admin1', 'admin1', 'The Son', 'theson@gmail.com', NULL, 'admin', 'Active'),
-(2, 'mod1', 'mod1', 'Tike Myson', 'tikemyson@gmail.com', '222222222222', 'moderator', 'Active'),
-(3, 'business1', 'business1', 'Dobert Rowney Jr', 'dobertrowneyjr@gmail.com', '333333333333', 'business', 'Active'),
-(4, 'member1', 'member1', 'Mat Ponahan', 'matponahan@gmail.com', NULL, 'member', 'Active'),
-(5, 'admin2', 'admin2', 'Swiftlor Tay', 'swiftlortay@gmail.com', '555555555555', 'admin', 'Active'),
-(6, 'mod2', 'mod2', 'Hom Tolland', 'homtolland@gmail.com', NULL, 'moderator', 'Active'),
-(7, 'business2', 'business2', 'Hewis Lamilton', 'hewislamilton@gmail.com', NULL, 'business', 'Active'),
-(8, 'member2', 'member2', 'Bichael Muble', 'bichaelmuble@gmail.com', '888888888888', 'member', 'Active');
+(1, 'admin1', 'admin1', 'The Son', 'theson@hmail.com', NULL, 'admin', 'Active'),
+(2, 'mod1', 'mod1', 'Tike Myson', 'tikemyson@hmail.com', '222222222222', 'moderator', 'Active'),
+(3, 'business1', 'business1', 'ABC Foods', 'abcfoods@hmail.com', '333333333333', 'business', 'Active'),
+(4, 'member1', 'member1', 'Mat Ponahan', 'matponahan@hmail.com', NULL, 'member', 'Active'),
+(5, 'admin2', 'admin2', 'Swiftlor Tay', 'swiftlortay@hmail.com', '555555555555', 'admin', 'Active'),
+(6, 'mod2', 'mod2', 'Hom Tolland', 'homtolland@hmail.com', NULL, 'moderator', 'Active'),
+(7, 'business2', 'business2', 'XYZ Travels', 'xyztravels@hmail.com', NULL, 'business', 'Active'),
+(8, 'member2', 'member2', 'Bichael Muble', 'bichaelmuble@hmail.com', '888888888888', 'member', 'Active'),
+(9, 'admin3', 'admin3', 'Hensen Juang', 'hensenjuang@hmail.com', '999999999999', 'admin', 'Active'),
+(10, 'moderator3', 'moderator3', 'Chonny Rieng', 'chonnyrieng@hmail.com', '101010101010', 'moderator', 'Active'),
+(11, 'business3', 'business3', 'DEF Retail', 'defretail@hmail.com', '110110110110', 'business', 'Active'),
+(12, 'member3', 'member3', 'Elbert Ainstein', 'elbertainstein@hmail.com', '120120120120', 'member', 'Active');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activities`
+--
+ALTER TABLE `activities`
+  ADD PRIMARY KEY (`activity_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `activity_completion`
+--
+ALTER TABLE `activity_completion`
+  ADD PRIMARY KEY (`user_id`,`activity_id`),
+  ADD UNIQUE KEY `image_path` (`image_path`),
+  ADD KEY `activity_id` (`activity_id`);
+
+--
+-- Indexes for table `badges`
+--
+ALTER TABLE `badges`
+  ADD PRIMARY KEY (`badge_id`),
+  ADD UNIQUE KEY `badge_name` (`badge_name`),
+  ADD UNIQUE KEY `image_path` (`image_path`);
+
+--
+-- Indexes for table `claimed_rewards`
+--
+ALTER TABLE `claimed_rewards`
+  ADD PRIMARY KEY (`ledger_id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`comment_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `post_id` (`post_id`);
+
+--
+-- Indexes for table `login_streak`
+--
+ALTER TABLE `login_streak`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `member_badges`
+--
+ALTER TABLE `member_badges`
+  ADD PRIMARY KEY (`user_id`,`badge_id`),
+  ADD KEY `badge_id` (`badge_id`);
+
+--
+-- Indexes for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`notification_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `notification_reads`
+--
+ALTER TABLE `notification_reads`
+  ADD PRIMARY KEY (`notification_id`,`user_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `points_ledger`
+--
+ALTER TABLE `points_ledger`
+  ADD PRIMARY KEY (`ledger_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `activity_id` (`activity_id`),
+  ADD KEY `reward_id` (`reward_id`);
+
+--
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`post_id`),
+  ADD UNIQUE KEY `image_path` (`image_path`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `rewards`
+--
+ALTER TABLE `rewards`
+  ADD PRIMARY KEY (`reward_id`),
+  ADD UNIQUE KEY `image_path` (`image_path`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `users`
@@ -68,10 +351,128 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `activities`
+--
+ALTER TABLE `activities`
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `badges`
+--
+ALTER TABLE `badges`
+  MODIFY `badge_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `notification_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `points_ledger`
+--
+ALTER TABLE `points_ledger`
+  MODIFY `ledger_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `rewards`
+--
+ALTER TABLE `rewards`
+  MODIFY `reward_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `activities`
+--
+ALTER TABLE `activities`
+  ADD CONSTRAINT `activities_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Constraints for table `activity_completion`
+--
+ALTER TABLE `activity_completion`
+  ADD CONSTRAINT `activity_completion_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `activity_completion_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`activity_id`);
+
+--
+-- Constraints for table `claimed_rewards`
+--
+ALTER TABLE `claimed_rewards`
+  ADD CONSTRAINT `claimed_rewards_ibfk_1` FOREIGN KEY (`ledger_id`) REFERENCES `points_ledger` (`ledger_id`);
+
+--
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `posts` (`post_id`);
+
+--
+-- Constraints for table `login_streak`
+--
+ALTER TABLE `login_streak`
+  ADD CONSTRAINT `login_streak_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Constraints for table `member_badges`
+--
+ALTER TABLE `member_badges`
+  ADD CONSTRAINT `member_badges_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `member_badges_ibfk_2` FOREIGN KEY (`badge_id`) REFERENCES `badges` (`badge_id`);
+
+--
+-- Constraints for table `notifications`
+--
+ALTER TABLE `notifications`
+  ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Constraints for table `notification_reads`
+--
+ALTER TABLE `notification_reads`
+  ADD CONSTRAINT `notification_reads_ibfk_1` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`notification_id`),
+  ADD CONSTRAINT `notification_reads_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Constraints for table `points_ledger`
+--
+ALTER TABLE `points_ledger`
+  ADD CONSTRAINT `points_ledger_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `points_ledger_ibfk_2` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`activity_id`),
+  ADD CONSTRAINT `points_ledger_ibfk_3` FOREIGN KEY (`reward_id`) REFERENCES `rewards` (`reward_id`);
+
+--
+-- Constraints for table `posts`
+--
+ALTER TABLE `posts`
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Constraints for table `rewards`
+--
+ALTER TABLE `rewards`
+  ADD CONSTRAINT `rewards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

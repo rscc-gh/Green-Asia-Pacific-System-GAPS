@@ -1,0 +1,238 @@
+/* Rewards page */
+.main-layout main {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 20px 40px;
+    background: #fff;
+}
+
+/* Heading */
+.reward-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.reward-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* List/Grid toggle */
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 14px;
+}
+
+.view-toggle button {
+    width: 52px;
+    height: 34px;
+    border: none;
+    background: #e5e5e5;
+    color: #444;
+    font-size: 19px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.view-toggle button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.view-toggle button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.view-toggle button:hover {
+    background: #ccc;
+}
+
+.view-toggle button.active {
+    background: #999;
+    color: #111;
+}
+
+/* Reward grid */
+.rewards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 45px 30px;
+    max-width: 850px;
+    margin: 28px auto 0;
+}
+
+/* Individual reward */
+.reward-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    text-align: center;
+}
+
+.reward-card img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    background: #d9d9d9;
+    border-radius: 2px;
+}
+
+.reward-card h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.reward-card a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.reward-card a:hover {
+    color: #777;
+}
+
+/* Empty rewards message */
+.rewards>p {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #777;
+    padding: 30px 0;
+}
+
+/* List view */
+.rewards.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 850px;
+}
+
+.rewards.list-view .reward-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.rewards.list-view .reward-card img {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+}
+
+.rewards.list-view .reward-card h3 {
+    flex: 1;
+}
+
+.rewards.list-view .reward-card a {
+    white-space: nowrap;
+}
+
+/* Responsive layout */
+@media (max-width: 1000px) {
+    .rewards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .rewards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .main-layout main {
+        padding: 10px 12px 30px;
+    }
+
+    .reward-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .rewards.list-view .reward-card {
+        gap: 12px;
+    }
+
+    .rewards.list-view .reward-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .rewards.list-view .reward-card a {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal {
+    position: relative;
+    background: white;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    border: none;
+    background: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+#redeemBtn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+
+#redeemBtn:disabled {
+    background: grey;
+    cursor: not-allowed;
+}
