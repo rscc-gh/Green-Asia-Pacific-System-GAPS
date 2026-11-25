@@ -1,0 +1,129 @@
+/* Manage Accounts page */
+.page-main {
+    padding: 20px 24px 48px;
+    background: #fff;
+}
+
+/* Heading */
+.page-head {
+    margin-bottom: 20px;
+}
+
+.page-head h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.page-sub {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Toolbar */
+.account-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.account-search {
+    position: relative;
+    flex: 1 1 260px;
+    min-width: 0;
+}
+
+.account-search i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.account-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px 10px 34px;
+    font-size: 13px;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.account-search input:focus,
+.account-tools select:focus {
+    outline: none;
+    border-color: #23845b;
+    box-shadow: 0 0 0 3px rgba(35, 132, 91, 0.12);
+}
+
+.account-tools select {
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Table */
+.account-table-wrap {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.account-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.account-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6b7280;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.account-table td {
+    padding: 14px 16px;
+    color: #374151;
+    vertical-align: middle;
+}
+
+/* Placeholder row */
+.table-placeholder td {
+    padding: 32px 16px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+    .account-table th:nth-child(2),
+    .account-table th:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .page-main {
+        padding: 16px 14px 36px;
+    }
+}

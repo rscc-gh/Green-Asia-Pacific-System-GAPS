@@ -44,6 +44,14 @@
             require '../app/views/user/rewards.php';
             break;
         
+        case 'manageaccounts':
+            require '../app/views/user/manageaccounts.php';
+            break;
+
+        case 'allstatistics':
+            require '../app/views/user/allstatistics.php';
+            break;
+
         case 'community':
             require '../app/views/user/community.php';
             break;
