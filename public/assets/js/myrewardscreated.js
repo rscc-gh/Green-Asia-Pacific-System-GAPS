@@ -1,4 +1,4 @@
-// My Rewards Created page scripts go here.
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const search = document.getElementById("rewardSearch");

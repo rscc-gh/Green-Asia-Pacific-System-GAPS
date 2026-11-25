@@ -25,20 +25,20 @@ include __DIR__ . '/../../config/conn.php';
 
 <body>
 
-    <!-- Header -->
+
     <?php
     include __DIR__ . '/../../layouts/user-header.php';
     ?>
 
-    <!-- Main Layout + Sidebar -->
+
     <div class="main-layout">
 
-        <!-- Sidebar -->
+
         <?php
         include __DIR__ . '/../../layouts/sidebar.php';
         ?>
 
-        <!-- Main Body -->
+
         <main class="page-main">
 
             <div class="page-head">
@@ -53,7 +53,7 @@ include __DIR__ . '/../../config/conn.php';
                 </a>
             </div>
 
-            <!-- Filters -->
+
             <div class="filter-row">
 
                 <div class="filter-search">
@@ -78,7 +78,7 @@ include __DIR__ . '/../../config/conn.php';
 
             </div>
 
-            <!-- Accounts table -->
+
             <div class="table-card">
                 <table class="data-table">
                     <thead>
@@ -105,7 +105,7 @@ include __DIR__ . '/../../config/conn.php';
 
     </div>
 
-    <!-- Footer -->
+
     <?php
     include __DIR__ . '/../../layouts/footer.php';
     ?>

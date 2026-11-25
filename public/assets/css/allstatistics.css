@@ -1,10 +1,10 @@
-/* All Statistics page */
+
 .page-main {
     padding: 22px 24px 48px;
     background: #f5f6f8;
 }
 
-/* Heading row */
+
 .page-head {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +27,7 @@
     color: #6b7280;
 }
 
-/* Buttons (shared) */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -58,7 +58,7 @@
     font-size: 12px;
 }
 
-/* Range filters */
+
 .filter-row {
     display: flex;
     flex-wrap: wrap;
@@ -107,7 +107,7 @@
     box-shadow: 0 0 0 3px rgba(35, 132, 91, 0.12);
 }
 
-/* Summary cards */
+
 .stat-cards {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -136,7 +136,7 @@
     letter-spacing: 0.02em;
 }
 
-/* Bar chart */
+
 .chart-card {
     padding: 18px 18px 12px;
     background: #fff;
@@ -192,7 +192,7 @@
     color: #9ca3af;
 }
 
-/* Table */
+
 .table-card {
     background: #fff;
     border: 1px solid #e5e7eb;
@@ -235,7 +235,7 @@
     color: #9ca3af;
 }
 
-/* Responsive */
+
 @media (max-width: 900px) {
     .stat-cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));

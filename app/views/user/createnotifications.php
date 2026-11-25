@@ -25,20 +25,19 @@ include __DIR__ . '/../../config/conn.php';
 
 <body>
 
-    <!-- Header -->
     <?php
     include __DIR__ . '/../../layouts/user-header.php';
     ?>
 
-    <!-- Main Layout + Sidebar -->
+
     <div class="main-layout">
 
-        <!-- Sidebar -->
+
         <?php
         include __DIR__ . '/../../layouts/sidebar.php';
         ?>
 
-        <!-- Main Body -->
+
         <main class="page-main">
 
             <div class="page-head">
@@ -48,7 +47,7 @@ include __DIR__ . '/../../config/conn.php';
                 </div>
             </div>
 
-            <!-- Compose -->
+
             <form class="compose-card" id="notifyForm">
 
                 <textarea id="notifyMessage" name="content" rows="6" maxlength="255"
@@ -67,7 +66,7 @@ include __DIR__ . '/../../config/conn.php';
 
             </form>
 
-            <!-- Search -->
+
             <div class="filter-row">
                 <div class="filter-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -75,7 +74,7 @@ include __DIR__ . '/../../config/conn.php';
                 </div>
             </div>
 
-            <!-- Sent announcements -->
+
             <div class="table-card">
                 <table class="data-table">
                     <thead>
@@ -95,7 +94,7 @@ include __DIR__ . '/../../config/conn.php';
                 </table>
             </div>
 
-            <!-- Pagination -->
+
             <nav class="pager" aria-label="Announcement pages">
                 <button type="button" class="pager-btn" aria-label="Previous page">&#8249;</button>
                 <button type="button" class="pager-btn is-current">1</button>
@@ -108,7 +107,7 @@ include __DIR__ . '/../../config/conn.php';
 
     </div>
 
-    <!-- Footer -->
+
     <?php
     include __DIR__ . '/../../layouts/footer.php';
     ?>

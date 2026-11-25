@@ -1,4 +1,4 @@
-// My Activities Created page scripts go here.
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const search = document.getElementById("createdSearch");

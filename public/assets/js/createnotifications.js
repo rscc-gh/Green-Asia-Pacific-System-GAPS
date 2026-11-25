@@ -1,4 +1,4 @@
-// Create Announcements page scripts go here.
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const message = document.getElementById("notifyMessage");
