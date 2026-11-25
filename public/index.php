@@ -52,6 +52,10 @@
             require '../app/views/user/allstatistics.php';
             break;
 
+        case 'createnotifications':
+            require '../app/views/user/createnotifications.php';
+            break;
+
         case 'community':
             require '../app/views/user/community.php';
             break;

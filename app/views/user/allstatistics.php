@@ -18,6 +18,7 @@ include __DIR__ . '/../../config/conn.php';
     <script src="/assets/js/sidebar.js" defer></script>
 
     <link rel="stylesheet" href="/assets/css/allstatistics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <script src="/assets/js/allstatistics.js" defer></script>
 </head>
@@ -42,73 +43,88 @@ include __DIR__ . '/../../config/conn.php';
 
             <div class="page-head">
                 <div>
-                    <h2>All Statistics</h2>
-                    <p class="page-sub">An overview of the accounts in GAPS.</p>
+                    <h2>All Post Statistics</h2>
+                    <p class="page-sub">Admin &rsaquo; Flagged Post Statistics &rsaquo; All Post Statistics</p>
                 </div>
+
+                <a href="/?page=manageaccounts" class="btn btn-ghost">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+                </a>
+            </div>
+
+            <!-- Range -->
+            <div class="filter-row">
+
+                <div class="filter-field">
+                    <label for="dateRange">Date Range</label>
+                    <input type="text" id="dateRange" placeholder="Start date &ndash; End date">
+                </div>
+
+                <div class="filter-field">
+                    <label for="statFilter">Filter</label>
+                    <select id="statFilter">
+                        <option value="all">All time</option>
+                        <option value="week">Last 7 days</option>
+                        <option value="month">Last 30 days</option>
+                        <option value="year">This year</option>
+                    </select>
+                </div>
+
             </div>
 
             <!-- Summary -->
             <section class="stat-cards">
 
-                <article class="stat-card" style="--accent:#23845b">
-                    <p class="stat-label">Total accounts</p>
-                    <p class="stat-value" id="totalAccounts">&mdash;</p>
-                    <p class="stat-note">Every registered user</p>
+                <article class="stat-card">
+                    <p class="stat-label">Total Posts</p>
+                    <p class="stat-value" id="totalPosts">&mdash;</p>
                 </article>
 
-                <article class="stat-card" style="--accent:#16a34a">
-                    <p class="stat-label">Active</p>
-                    <p class="stat-value" id="activeAccounts">&mdash;</p>
-                    <p class="stat-note">Accounts in good standing</p>
+                <article class="stat-card">
+                    <p class="stat-label">Total Comments</p>
+                    <p class="stat-value" id="totalComments">&mdash;</p>
                 </article>
 
-                <article class="stat-card" style="--accent:#dc2626">
-                    <p class="stat-label">Inactive or banned</p>
-                    <p class="stat-value" id="inactiveAccounts">&mdash;</p>
-                    <p class="stat-note">Accounts not in use</p>
+                <article class="stat-card">
+                    <p class="stat-label">Reported Posts</p>
+                    <p class="stat-value" id="reportedPosts">&mdash;</p>
                 </article>
 
-                <article class="stat-card" style="--accent:#2f6fed">
-                    <p class="stat-label">Roles in use</p>
-                    <p class="stat-value" id="roleTotal">&mdash;</p>
-                    <p class="stat-note">Distinct account roles</p>
+                <article class="stat-card">
+                    <p class="stat-label">Users' Comments</p>
+                    <p class="stat-value" id="userComments">&mdash;</p>
                 </article>
 
             </section>
 
-            <!-- Charts -->
-            <section class="charts">
-
-                <!-- Donut: accounts by role -->
-                <article class="chart-card">
-
-                    <h3>Accounts by role</h3>
-
-                    <div class="donut-wrap">
-                        <div class="donut" id="roleChart">
-                            <div class="donut-center">
-                                <span class="donut-total" id="donutTotal">0</span>
-                                <span class="donut-caption">accounts</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <ul class="legend" id="roleLegend"></ul>
-
-                </article>
-
-                <!-- Stacked bar: accounts by status -->
-                <article class="chart-card">
-
-                    <h3>Accounts by status</h3>
-
-                    <div class="stack" id="statusChart"></div>
-
-                    <ul class="chips" id="statusLegend"></ul>
-
-                </article>
-
+            <!-- Chart -->
+            <section class="chart-card">
+                <div class="chart" id="postChart"></div>
+                <p class="chart-caption" id="chartCaption">Posts per period</p>
             </section>
+
+            <!-- Detail table -->
+            <div class="table-card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Content</th>
+                            <th>Comments</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="postRows">
+                        <tr class="table-placeholder">
+                            <td colspan="6">Post statistics will show up here.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
         </main>
 

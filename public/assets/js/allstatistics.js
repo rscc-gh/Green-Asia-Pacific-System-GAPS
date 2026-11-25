@@ -1,94 +1,49 @@
 // Charts are drawn here, not in PHP.
-// Replace these sample figures with the real account counts later.
-const roleData = [
-    { label: "Admin", count: 2, color: "#23845b" },
-    { label: "Moderator", count: 2, color: "#2f6fed" },
-    { label: "Business", count: 2, color: "#e08a1e" },
-    { label: "Member", count: 2, color: "#8b5cf6" }
-];
+// Replace these sample figures with the real statistics later.
+const postStats = {
+    totalPosts: 148,
+    totalComments: 392,
+    reportedPosts: 17,
+    userComments: 96
+};
 
-const statusData = [
-    { label: "Active", count: 8, color: "#23845b" }
+const chartData = [
+    { label: "Mon", value: 8 },
+    { label: "Tue", value: 14 },
+    { label: "Wed", value: 21 },
+    { label: "Thu", value: 12 },
+    { label: "Fri", value: 17 },
+    { label: "Sat", value: 6 },
+    { label: "Sun", value: 16 }
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const roleTotal = roleData.reduce(function (sum, item) {
-        return sum + item.count;
-    }, 0);
-
-    const activeTotal = statusData.reduce(function (sum, item) {
-        return sum + item.count;
-    }, 0);
-
     // Summary cards
-    document.getElementById("totalAccounts").textContent = roleTotal;
-    document.getElementById("activeAccounts").textContent = activeTotal;
-    document.getElementById("inactiveAccounts").textContent = roleTotal - activeTotal;
-    document.getElementById("roleTotal").textContent = roleData.length;
-    document.getElementById("donutTotal").textContent = roleTotal;
+    document.getElementById("totalPosts").textContent = postStats.totalPosts;
+    document.getElementById("totalComments").textContent = postStats.totalComments;
+    document.getElementById("reportedPosts").textContent = postStats.reportedPosts;
+    document.getElementById("userComments").textContent = postStats.userComments;
 
-    // Donut: one conic-gradient stop per role
-    const donut = document.getElementById("roleChart");
-    const legend = document.getElementById("roleLegend");
+    // Bar chart
+    const chart = document.getElementById("postChart");
+    const highest = Math.max.apply(null, chartData.map(function (item) {
+        return item.value;
+    }));
 
-    let start = 0;
+    chartData.forEach(function (item) {
 
-    const stops = roleData.map(function (item) {
+        const height = highest > 0 ? (item.value / highest) * 100 : 0;
 
-        const size = roleTotal > 0 ? (item.count / roleTotal) * 100 : 0;
-        const stop = item.color + " " + start + "% " + (start + size) + "%";
+        const col = document.createElement("div");
+        col.className = "bar-col";
 
-        start += size;
+        col.innerHTML =
+            '<span class="bar-value">' + item.value + '</span>' +
+            '<div class="bar" style="height:' + height + '%"></div>' +
+            '<span class="bar-label">' + item.label + '</span>';
 
-        return stop;
-    });
-
-    donut.style.background = roleTotal > 0
-        ? "conic-gradient(" + stops.join(", ") + ")"
-        : "#f1f5f9";
-
-    roleData.forEach(function (item) {
-
-        const percent = roleTotal > 0 ? Math.round((item.count / roleTotal) * 100) : 0;
-
-        const row = document.createElement("li");
-
-        row.innerHTML =
-            '<span class="legend-dot" style="background:' + item.color + '"></span>' +
-            '<span class="legend-name">' + item.label + '</span>' +
-            '<span class="legend-count">' + item.count + '</span>' +
-            '<span class="legend-percent">' + percent + '%</span>';
-
-        legend.appendChild(row);
-    });
-
-    // Stacked bar: segments sized by count
-    const stack = document.getElementById("statusChart");
-    const chips = document.getElementById("statusLegend");
-
-    statusData.forEach(function (item) {
-
-        const segment = document.createElement("div");
-
-        segment.className = "stack-seg";
-        segment.style.flexGrow = item.count;
-        segment.style.background = item.color;
-        segment.textContent = item.count;
-
-        stack.appendChild(segment);
-
-        const percent = activeTotal > 0 ? Math.round((item.count / activeTotal) * 100) : 0;
-
-        const chip = document.createElement("li");
-
-        chip.innerHTML =
-            '<span class="chip-dot" style="background:' + item.color + '"></span>' +
-            '<span>' + item.label + '</span>' +
-            '<strong>' + item.count + '</strong>' +
-            '<span class="chip-percent">' + percent + '%</span>';
-
-        chips.appendChild(chip);
+        chart.appendChild(col);
     });
 
 });
