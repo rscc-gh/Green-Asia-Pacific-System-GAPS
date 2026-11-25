@@ -1,0 +1,249 @@
+/* All Statistics page */
+.page-main {
+    padding: 20px 24px 48px;
+    background: #fff;
+}
+
+/* Heading */
+.page-head {
+    margin-bottom: 24px;
+}
+
+.page-head h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.page-sub {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Summary cards */
+.stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    position: relative;
+    margin: 0;
+    padding: 16px 18px 16px 22px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--accent, #23845b);
+}
+
+.stat-label {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.stat-value {
+    margin: 6px 0 2px;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 700;
+    color: #111827;
+}
+
+.stat-note {
+    margin: 0;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Chart panels */
+.charts {
+    display: grid;
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.chart-card {
+    margin: 0;
+    padding: 18px 20px 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.chart-card h3 {
+    margin: 0 0 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Donut: background gradient is set by JS, the hole is cut with ::after */
+.donut-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.donut {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #f1f5f9;
+}
+
+.donut::after {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.donut-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.donut-total {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    color: #111827;
+}
+
+.donut-caption {
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9ca3af;
+}
+
+/* Legend */
+.legend {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legend li {
+    display: grid;
+    grid-template-columns: 10px 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-name {
+    text-transform: capitalize;
+}
+
+.legend-count {
+    font-weight: 600;
+}
+
+.legend-percent {
+    min-width: 38px;
+    text-align: right;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Stacked status bar */
+.stack {
+    display: flex;
+    width: 100%;
+    height: 34px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.stack-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 16px 0 0;
+    padding: 0;
+    font-size: 13px;
+    color: #374151;
+}
+
+.chips li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.chip-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+}
+
+.chip-percent {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    .charts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .page-main {
+        padding: 16px 14px 36px;
+    }
+
+    .stat-value {
+        font-size: 26px;
+    }
+}
