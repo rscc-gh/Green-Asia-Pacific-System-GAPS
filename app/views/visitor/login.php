@@ -1,11 +1,11 @@
 <?php
-    // If already logged in, skip the login page
+    // If user allready logged in, skip the login page
     if (isset($_SESSION['user_id'])) {
         header('Location: /?page=dashboard');
         exit;
     }
 
-    // One-time error message set by actions/login.php
+    // this is a 1 time error message set by actions/login.php
     $error = $_SESSION['login_error'] ?? '';
     unset($_SESSION['login_error']);
 ?>
@@ -25,18 +25,18 @@
 
 <body>
 
-    <!-- Header -->
+    <!--Header-->
     <?php
         include __DIR__ . '/../../layouts/visitor-header.php';
     ?>
 
-    <!-- Main Body -->
+    <!--Main Body-->
     <main class="login-main">
 
-        <!-- Left: image (replace this div with an <img> when the team has the picture) -->
+        <!--Left side image (replace this div with img when got the real GAPS picture)-->
         <div class="login-image" role="img" aria-label="Login illustration"></div>
 
-        <!-- Right: login card -->
+        <!--Right side login block-->
         <section class="login-card">
             <p class="login-intro">Log in to continue helping our planet bit by bit</p>
 

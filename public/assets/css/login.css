@@ -1,5 +1,3 @@
-/* Team palette, defined here too so this page never depends on another file.
-   (If global.css already defines these, the values are the same.) */
 .login-main {
     --green-main: #01B636;
     --green-mid:  #3BD16F;
@@ -20,17 +18,16 @@
     color: var(--black);
 }
 
-/* Left block: picture placeholder (crossed box, like the wireframe) */
+/* Left block GAPS picture placeholder hi ryan I pinjam your free gift pic dulu ya */
 .login-image {
     flex: 0 1 380px;
     aspect-ratio: 3 / 4;
     border: 2px solid var(--black);
     background: url('/uploads/vouchers/free_gift.png') center / cover no-repeat;
-    /* When you have the real picture, replace the whole background with:
-       background: url('/assets/images/login.jpg') center / cover no-repeat; */
+
 }
 
-/* Right block: login card */
+/* Right block is login credential side */
 .login-card {
     flex: 0 1 480px;
     padding: 36px 40px;
@@ -119,7 +116,7 @@
     color: #A61B1B;
 }
 
-/* Phones and small tablets: stack, picture on top */
+/* this I asked chat and it said phones will stack it and picture on top */
 @media (max-width: 800px) {
     .login-main {
         flex-direction: column;

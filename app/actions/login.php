@@ -1,8 +1,7 @@
 <?php
-    // Connection must be at the very top
     require_once __DIR__ . '/../config/conn.php';
 
-    // Only accept form submissions
+    //Only accept form submissions
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         header('Location: /?page=login');
         exit;
@@ -21,7 +20,7 @@
         loginFail('Enter your username or email and your password.');
     }
 
-    // Look the user up (prepared statement = safe from SQL injection)
+    //Look the user up from mysql databasase
     $stmt = mysqli_prepare($conn,
         "SELECT user_id, username, password, full_name, user_role, status
          FROM users WHERE username = ? OR email = ? LIMIT 1");
@@ -30,8 +29,8 @@
     $user = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
     mysqli_stmt_close($stmt);
 
-    // Works with hashed passwords AND the current plain-text test data.
-    // Once the team switches to password_hash(), delete the hash_equals part.
+    //Works with hashed passwords and also the for now plain test data.
+    //Once we all switch to password_hash() then can delete the hash_equals part.
     $valid = $user && (
         password_verify($password, $user['password']) ||
         hash_equals($user['password'], $password)
@@ -45,7 +44,7 @@
         loginFail('This account is not active. Contact an admin.');
     }
 
-    // Success: new session id, then store who is logged in
+    // when this success means new session id, then store who is logged in
     session_regenerate_id(true);
     $_SESSION['user_id']   = $user['user_id'];
     $_SESSION['username']  = $user['username'];
