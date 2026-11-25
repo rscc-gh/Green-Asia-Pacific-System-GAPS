@@ -180,8 +180,7 @@
 
 
 
-
-
+/* Reward Popup Modal */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -235,4 +234,38 @@
 #redeemBtn:disabled {
     background: grey;
     cursor: not-allowed;
+}
+
+
+
+
+/* Redemption Popup Modal */
+.message-box {
+    text-align: center;
+    border-top: 6px solid green;
+}
+
+.message-box.error {
+    border-top-color: crimson;
+}
+
+.message-box h3 {
+    margin-top: 0;
+}
+
+.message-box.success h3 {
+    color: green;
+}
+
+.message-box.error h3 {
+    color: crimson;
+}
+
+.message-ok {
+    padding: 0.6rem 2rem;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: white;
+    cursor: pointer;
 }

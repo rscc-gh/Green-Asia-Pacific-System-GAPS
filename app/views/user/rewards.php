@@ -1,12 +1,7 @@
 <?php
 include __DIR__ . '/../../config/conn.php';
 
-/*
-$_SESSION['user_id'] = 4;
-$_SESSION['user_role'] = "member";
-*/
-
-$query = "SELECT * FROM rewards WHERE status = 'Active'";
+$query = "SELECT * FROM rewards WHERE status = 'Active' AND quantity > 0 AND (expiry_date >= CURDATE() OR expiry_date IS NULL)";
 
 $result = mysqli_query($conn, $query);
 
@@ -127,8 +122,6 @@ if ($isMember) {
 
     </div>
 
-
-
     <!-- Footer -->
     <?php
     include __DIR__ . '/../../layouts/footer.php';
@@ -148,7 +141,7 @@ if ($isMember) {
             <p id="modalTerms"></p>
 
             <?php if ($isMember): ?>
-                <form method="POST" action="/../../actions/redeem.php">
+                <form method="POST" action="/?page=redeem">
                     <input type="hidden" name="reward_id" id="modalRewardId">
                     <button type="submit" id="redeemBtn">Redeem</button>
                 </form>
@@ -159,6 +152,21 @@ if ($isMember) {
     <script>
         const userPoints = <?= $totalPoints ?>;
     </script>
+
+    <!-- Redemption Popup -->
+    <?php if (isset($_SESSION['message'])): ?>
+        <div class="modal-overlay open" id="messageModal">
+            <div class="modal message-box <?= $_SESSION['message_type'] ?? 'success' ?>">
+                <h3><?= ($_SESSION['message_type'] ?? 'success') === 'success' ? 'Success' : 'Oops' ?></h3>
+                <p><?= htmlspecialchars($_SESSION['message']) ?></p>
+                <button type="button" class="message-ok"
+                    onclick="document.getElementById('messageModal').classList.remove('open')">
+                    OK
+                </button>
+            </div>
+        </div>
+        <?php unset($_SESSION['message'], $_SESSION['message_type']); ?>
+    <?php endif; ?>
 
 </body>
 
