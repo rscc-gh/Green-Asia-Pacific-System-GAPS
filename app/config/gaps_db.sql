@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2026 at 05:04 AM
+-- Generation Time: Nov 26, 2026 at 11:10 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,14 +43,18 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`activity_id`, `user_id`, `title`, `content`, `points`, `start_date`, `end_date`, `status`) VALUES
-(1, 1, 'Recyclathon', 'Recycle 10 times', 15, '2026-11-26 11:13:11', '2027-01-10 00:00:00', 'Active'),
-(2, 1, 'Beach Cleanup', 'Join the beach cleanup on 18/12/2026 to 20/12/2026 at AAA Beach from 8am to 12pm', 30, '2026-11-26 11:57:54', '2026-12-20 00:00:00', 'Active'),
-(3, 3, 'Green Workshop', 'Join our sustainability workshop on 3 Jan from 10am to 12:30am', 10, '2027-01-03 10:00:00', '2027-01-03 12:30:00', 'Active'),
-(4, 1, 'My Farm!', 'Plant your own vegetables', 10, '2026-11-26 11:57:54', '2026-12-20 00:00:00', 'Active'),
-(5, 5, 'Sustainable Swap!', 'Swap reusable items with friends on 10th Jan at APU Campus', 30, '2027-01-10 00:00:00', '2027-01-10 00:00:00', 'Active'),
-(6, 7, 'Eco Friendly Exhibition', 'Come bring your creative arts with a sustainable theme to APU on 29th Dec', 5, '2026-12-29 00:00:00', '2026-12-29 00:00:00', 'Active'),
-(7, 7, 'APU Cleanup', 'Clean up APU from 4 Jan to 5 Jan', 20, '2027-01-04 00:00:00', '2027-01-05 00:00:00', 'Active'),
-(8, 11, 'Bike Ride No Emissions', 'Ride your bike to APU Campus on 12 Jan', 50, '2027-01-12 00:00:00', '2027-01-12 00:00:00', 'Active');
+(1, 1, 'Clean Up Bingo 1', 'Clean up APU campus and try to complete a bingo list at the same time', 50, '2001-09-11 00:00:00', '2001-09-11 00:00:00', 'Inactive'),
+(2, 1, 'Clean Up Bingo 2', 'Clean up APU campus and try to complete a bingo list at the same time', 100, '2007-01-01 00:00:00', '2007-01-01 00:00:00', 'Inactive'),
+(3, 1, 'Clean Up Bingo 3', 'Clean up APU campus and try to complete a bingo list at the same time', 200, '2020-03-01 00:00:00', '2020-03-01 00:00:00', 'Inactive'),
+(4, 1, 'Clean Up Bingo 4', 'Clean up APU campus and try to complete a bingo list at the same time', 250, '1984-12-25 00:00:00', '1984-12-25 00:00:00', 'Inactive'),
+(5, 1, 'Recyclathon', 'Recycle 10 times', 15, '2026-11-26 11:13:11', '2027-01-10 00:00:00', 'Active'),
+(6, 1, 'Beach Cleanup', 'Join the beach cleanup on 18/12/2026 to 20/12/2026 at AAA Beach from 8am to 12pm', 30, '2026-11-26 11:57:54', '2026-12-20 00:00:00', 'Active'),
+(7, 3, 'Green Workshop', 'Join our sustainability workshop on 3 Jan from 10am to 12:30am', 10, '2027-01-03 10:00:00', '2027-01-03 12:30:00', 'Active'),
+(8, 1, 'My Farm!', 'Plant your own vegetables', 10, '2026-11-26 11:57:54', '2026-12-20 00:00:00', 'Active'),
+(9, 5, 'Sustainable Swap!', 'Swap reusable items with friends on 10th Jan at APU Campus', 30, '2027-01-10 00:00:00', '2027-01-10 00:00:00', 'Active'),
+(10, 7, 'Eco Friendly Exhibition', 'Come bring your creative arts with a sustainable theme to APU on 29th Dec', 5, '2026-12-29 00:00:00', '2026-12-29 00:00:00', 'Active'),
+(11, 7, 'APU Cleanup', 'Clean up APU from 4 Jan to 5 Jan', 20, '2027-01-04 00:00:00', '2027-01-05 00:00:00', 'Active'),
+(12, 11, 'Bike Ride No Emissions', 'Ride your bike to APU Campus on 12 Jan', 50, '2027-01-12 00:00:00', '2027-01-12 00:00:00', 'Active');
 
 -- --------------------------------------------------------
 
@@ -67,6 +71,20 @@ CREATE TABLE `activity_completion` (
   `date_completed` datetime DEFAULT NULL,
   `status` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `activity_completion`
+--
+
+INSERT INTO `activity_completion` (`user_id`, `activity_id`, `content`, `image_path`, `date_joined`, `date_completed`, `status`) VALUES
+(4, 1, '', 'a', '2001-09-11 00:00:00', '2001-09-11 00:00:00', 'Complete'),
+(4, 2, '', 'h', '2007-01-01 00:00:00', '2007-01-01 00:00:00', 'Complete'),
+(4, 3, '', 'b', '2020-03-01 00:00:00', '2020-03-01 00:00:00', 'Complete'),
+(4, 4, '', 'c', '1984-12-25 00:00:00', '1984-12-25 00:00:00', 'Complete'),
+(8, 1, '', 'f', '2001-09-11 00:00:00', '2001-09-11 00:00:00', 'Complete'),
+(8, 2, '', 'd', '2007-01-01 00:00:00', '2007-01-01 00:00:00', 'Complete'),
+(8, 3, '', 'e', '2020-03-01 00:00:00', '2020-03-01 00:00:00', 'Complete'),
+(12, 3, '', 'g', '2020-03-01 00:00:00', '2020-03-01 00:00:00', 'Complete');
 
 -- --------------------------------------------------------
 
@@ -110,6 +128,24 @@ CREATE TABLE `comments` (
   `date_created` datetime NOT NULL,
   `status` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `user_id`, `post_id`, `content`, `date_created`, `status`) VALUES
+(1, 3, 2, 'First', '2026-11-26 18:08:48', 'Active'),
+(2, 4, 4, 'What he wrote down', '2026-11-26 18:08:48', 'Active'),
+(3, 8, 6, 'He''s nervous', '2026-11-26 18:08:48', 'Active'),
+(4, 3, 8, 'His palms are sweaty', '2026-11-26 18:08:48', 'Active'),
+(5, 11, 2, 'Knees weak', '2026-11-26 18:08:48', 'Active'),
+(6, 12, 4, 'Arms are heavy', '2026-11-26 18:08:48', 'Active'),
+(7, 3, 6, 'But on the surface he looks calm and ready', '2026-11-26 18:08:48', 'Active'),
+(8, 7, 7, 'To drop bombs but he keeps on forgettin', '2026-11-26 18:08:48', 'Active'),
+(9, 4, 1, 'The whole crowd goes so loud', '2026-11-26 18:08:48', 'Active'),
+(10, 4, 3, 'He opens his mouth but the words wont come out', '2026-11-26 18:08:48', 'Active'),
+(11, 4, 7, 'He''s chokin, how, everybody''s jokin now', '2026-11-26 18:08:48', 'Active'),
+(12, 4, 6, 'The clock''s run out. Time''s up. Over blaow.', '2026-11-26 18:08:48', 'Active');
 
 -- --------------------------------------------------------
 
@@ -175,6 +211,20 @@ CREATE TABLE `points_ledger` (
   `points` int(11) NOT NULL,
   `date_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `points_ledger`
+--
+
+INSERT INTO `points_ledger` (`ledger_id`, `user_id`, `activity_id`, `reward_id`, `points`, `date_created`) VALUES
+(1, 4, 1, NULL, 50, '2001-09-11 00:00:00'),
+(2, 4, 2, NULL, 100, '2007-01-01 00:00:00'),
+(3, 4, 3, NULL, 200, '2020-03-01 00:00:00'),
+(4, 4, 4, NULL, 250, '1984-12-25 00:00:00'),
+(5, 8, 1, NULL, 50, '2001-09-11 00:00:00'),
+(6, 8, 2, NULL, 100, '2007-01-01 00:00:00'),
+(7, 8, 3, NULL, 200, '2020-03-01 00:00:00'),
+(8, 12, 3, NULL, 200, '2020-03-01 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -383,7 +433,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `badges`
@@ -395,7 +445,7 @@ ALTER TABLE `badges`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `notifications`
@@ -407,7 +457,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `points_ledger`
 --
 ALTER TABLE `points_ledger`
-  MODIFY `ledger_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ledger_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `posts`
