@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST'
     || !isset($_SESSION['user_id'])
     || $_SESSION['user_role'] !== "member") {
     
-    header("Location: /../../views/user/rewards.php");
+    header("Location: /RWDD2507/public/?page=rewards");
     exit;
 }
 
@@ -66,6 +66,6 @@ catch (Exception $e) {
     $_SESSION['message_type'] = 'error';
 }
 
-header("Location: /?page=rewards")
+header("Location: /RWDD2507/public/?page=rewards")
     
 ?>

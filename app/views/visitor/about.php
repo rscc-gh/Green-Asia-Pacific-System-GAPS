@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
 
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/visitor-header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
-    <link rel="stylesheet" href="/assets/css/about.css">
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/global.css">
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/visitor-header.css">
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/footer.css">
+    
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/about.css">
 </head>
 
 <body>
@@ -24,12 +25,12 @@
             <h1>Let's make a greener world together, one step at a time</h1>
             <p class="about-hero-text">
                 The Green Asia Pacific System allows its members to complete a range of green activities to
-                 accumulate green points, which can subsequently be claimed as prizes by their business partner.
+                accumulate green points, which can subsequently be claimed as prizes by their business partner.
 
             </p>
 
             <div class="about-hero-actions">
-                <a href="/?page=signup" class="about-cta">Sign Up</a>
+                <a href="/RWDD2507/public/?page=signup" class="about-cta">Sign Up</a>
                 <a href="#how-it-works" class="about-cta about-cta-secondary">How it works</a>
             </div>
         </section>
@@ -48,7 +49,7 @@
                     <h3>Participate</h3>
                     <p>
                         Partners will add various activities, goals and events to the website.
-                         Members will select and complete these, submitting the required evidence.
+                        Members will select and complete these, submitting the required evidence.
                     </p>
                 </div>
 
@@ -57,7 +58,7 @@
                     <h3>Earn green points</h3>
                     <p>
                         After a moderator reviews and endorses the submitted evidence,
-                         the relevant number of Green Points will be credited to the member.
+                        the relevant number of Green Points will be credited to the member.
                     </p>
                 </div>
 
@@ -133,7 +134,7 @@
         <section class="about-closing">
             <h2>Start earning green points</h2>
             <p>Create an account, pick an activity and let your actions count.</p>
-            <a href="/?page=signup" class="about-cta">Create an account</a>
+            <a href="/RWDD2507/public/?page=signup" class="about-cta">Create an account</a>
         </section>
 
     </main>
