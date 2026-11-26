@@ -1,13 +1,13 @@
 <?php
-    // If user allready logged in, skip the login page
-    if (isset($_SESSION['user_id'])) {
-        header('Location: /?page=dashboard');
-        exit;
-    }
+// If user allready logged in, skip the login page
+if (isset($_SESSION['user_id'])) {
+    header('Location: /RWDD2507/public/?page=dashboard');
+    exit;
+}
 
-    // this is a 1 time error message set by actions/login.php
-    $error = $_SESSION['login_error'] ?? '';
-    unset($_SESSION['login_error']);
+// this is a 1 time error message set by actions/login.php
+$error = $_SESSION['login_error'] ?? '';
+unset($_SESSION['login_error']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,17 +17,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/visitor-header.css">
-    <link rel="stylesheet" href="/assets/css/footer.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/global.css">
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/visitor-header.css">
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/footer.css">
+
+    <link rel="stylesheet" href="/RWDD2507/public/assets/css/login.css">
 </head>
 
 <body>
 
     <!--Header-->
     <?php
-        include __DIR__ . '/../../layouts/visitor-header.php';
+    include __DIR__ . '/../../layouts/visitor-header.php';
     ?>
 
     <!--Main Body-->
@@ -44,7 +45,7 @@
                 <p class="login-error" role="alert"><?= htmlspecialchars($error) ?></p>
             <?php endif; ?>
 
-            <form action="/?page=loginprocess" method="post">
+            <form action="/RWDD2507/public/?page=loginprocess" method="post">
                 <label for="username">Username/Email</label>
                 <input type="text" id="username" name="username" required autofocus>
 
@@ -54,15 +55,16 @@
                 <button type="submit">Login</button>
             </form>
 
-            <a href="/?page=signup" class="login-signup">New here? Sign Up</a>
+            <a href="/RWDD2507/public/?page=signup" class="login-signup">New here? Sign Up</a>
         </section>
 
     </main>
 
     <!-- Footer -->
     <?php
-        include __DIR__ . '/../../layouts/footer.php';
+    include __DIR__ . '/../../layouts/footer.php';
     ?>
 
 </body>
+
 </html>

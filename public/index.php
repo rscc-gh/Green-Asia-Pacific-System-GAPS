@@ -9,76 +9,76 @@
     switch ($page) {
 
         case 'home':
-            require '../app/views/visitor/home.php';
+            require __DIR__ . '/../app/views/visitor/home.php';
             break;
             
         case 'about':
-            require '../app/views/visitor/about.php';
+            require __DIR__ . '/../app/views/visitor/about.php';
             break;
         
         case 'contact':
-            require '../app/views/visitor/contact.php';
+            require __DIR__ . '/../app/views/visitor/contact.php';
             break;
             
         case 'signup':
-            require '../app/views/visitor/signup.php';
+            require __DIR__ . '/../app/views/visitor/signup.php';
             break;
             
         case 'login':
-            require '../app/views/visitor/login.php';
+            require __DIR__ . '/../app/views/visitor/login.php';
             break;
 
         case 'dashboard':
-            require '../app/views/user/dashboard.php';
+            require __DIR__ . '/../app/views/user/dashboard.php';
             break;
 
         case 'myprofile':
-            require '../app/views/user/myprofile.php';
+            require __DIR__ . '/../app/views/user/myprofile.php';
             break;
             
         case 'activities':
-            require '../app/views/user/activities.php';
+            require __DIR__ . '/../app/views/user/activities.php';
             break;
         
         case 'rewards':
-            require '../app/views/user/rewards.php';
+            require __DIR__ . '/../app/views/user/rewards.php';
             break;
         
         case 'manageaccounts':
-            require '../app/views/user/manageaccounts.php';
+            require __DIR__ . '/../app/views/user/manageaccounts.php';
             break;
 
         case 'allstatistics':
-            require '../app/views/user/allstatistics.php';
+            require __DIR__ . '/../app/views/user/allstatistics.php';
             break;
 
         case 'createnotifications':
-            require '../app/views/user/createnotifications.php';
+            require __DIR__ . '/../app/views/user/createnotifications.php';
             break;
 
         case 'myactivitiescreated':
-            require '../app/views/user/myactivitiescreated.php';
+            require __DIR__ . '/../app/views/user/myactivitiescreated.php';
             break;
 
         case 'myrewardscreated':
-            require '../app/views/user/myrewardscreated.php';
+            require __DIR__ . '/../app/views/user/myrewardscreated.php';
             break;
 
         case 'community':
-            require '../app/views/user/community.php';
+            require __DIR__ . '/../app/views/user/community.php';
             break;
 
         case 'redeem':
-            require '../app/actions/redeem.php';
+            require __DIR__ . '/../app/actions/redeem.php';
             break;
 
         case 'loginprocess':
-            require '../app/actions/login.php';
+            require __DIR__ . '/../app/actions/login.php';
             break;
 
         default:
             http_response_code(404);
-            require '../app/views/errors/404.php';
+            require __DIR__ . '/../app/views/errors/404.php';
             break;
     }
     
