@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2026 at 07:17 AM
+-- Generation Time: Nov 26, 2026 at 05:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,6 +37,20 @@ CREATE TABLE `activities` (
   `end_date` datetime NOT NULL,
   `status` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `activities`
+--
+
+INSERT INTO `activities` (`activity_id`, `user_id`, `title`, `content`, `points`, `start_date`, `end_date`, `status`) VALUES
+(1, 1, 'Recyclathon', 'Recycle 10 times', 15, '2026-11-26 11:13:11', '2027-01-10 00:00:00', 'Active'),
+(2, 1, 'Beach Cleanup', 'Join the beach cleanup on 18/12/2026 to 20/12/2026 at AAA Beach from 8am to 12pm', 30, '2026-11-26 11:57:54', '2026-12-20 00:00:00', 'Active'),
+(3, 3, 'Green Workshop', 'Join our sustainability workshop on 3 Jan from 10am to 12:30am', 10, '2027-01-03 10:00:00', '2027-01-03 12:30:00', 'Active'),
+(4, 1, 'My Farm!', 'Plant your own vegetables', 10, '2026-11-26 11:57:54', '2026-12-20 00:00:00', 'Active'),
+(5, 5, 'Sustainable Swap!', 'Swap reusable items with friends on 10th Jan at APU Campus', 30, '2027-01-10 00:00:00', '2027-01-10 00:00:00', 'Active'),
+(6, 7, 'Eco Friendly Exhibition', 'Come bring your creative arts with a sustainable theme to APU on 29th Dec', 5, '2026-12-29 00:00:00', '2026-12-29 00:00:00', 'Active'),
+(7, 7, 'APU Cleanup', 'Clean up APU from 4 Jan to 5 Jan', 20, '2027-01-04 00:00:00', '2027-01-05 00:00:00', 'Active'),
+(8, 11, 'Bike Ride No Emissions', 'Ride your bike to APU Campus on 12 Jan', 50, '2027-01-12 00:00:00', '2027-01-12 00:00:00', 'Active');
 
 -- --------------------------------------------------------
 
@@ -176,6 +190,21 @@ CREATE TABLE `posts` (
   `date_created` datetime NOT NULL,
   `status` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`post_id`, `user_id`, `image_path`, `content`, `date_created`, `status`) VALUES
+(1, 3, 'a', '', '2026-11-26 11:02:41', 'Active'),
+(2, 4, 'b', '', '2026-11-26 11:02:41', 'Active'),
+(3, 8, 'c', '', '2026-11-26 11:02:41', 'Active'),
+(4, 3, 'd', '', '2026-11-26 11:02:41', 'Active'),
+(5, 7, 'e', '', '2026-11-26 11:02:41', 'Active'),
+(6, 7, 'f', '', '2026-11-26 11:02:41', 'Active'),
+(7, 11, 'g', '', '2026-11-26 11:02:41', 'Active'),
+(8, 4, 'h', '', '2026-11-26 11:02:41', 'Active'),
+(9, 12, 'i', '', '2026-11-26 11:02:41', 'Active');
 
 -- --------------------------------------------------------
 
@@ -354,7 +383,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `badges`
@@ -384,7 +413,7 @@ ALTER TABLE `points_ledger`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `rewards`
