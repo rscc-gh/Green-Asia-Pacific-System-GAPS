@@ -1,0 +1,251 @@
+/* About Us */
+
+.about-page {
+    color: #111827;
+    line-height: 1.6;
+}
+
+.about-page h1 {
+    font-size: 44px;
+    line-height: 1.2;
+    color: #14532d;
+}
+
+.about-page h2 {
+    margin: 0 0 12px;
+    font-size: 28px;
+    color: #14532d;
+}
+
+.about-hero {
+    padding: 80px 4% 70px;
+    text-align: center;
+    background-color: #e8f8ef;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.about-hero h1 {
+    max-width: 760px;
+    margin: 0 auto 18px;
+}
+
+.about-hero-text {
+    max-width: 660px;
+    margin: 0 auto 28px;
+    font-size: 17px;
+    color: #4b5563;
+}
+
+.about-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-hero-actions .about-cta {
+    margin: 0 6px 10px;
+}
+
+.about-cta {
+    display: inline-block;
+    padding: 12px 26px;
+    border: 1px solid #23845b;
+    border-radius: 6px;
+    background-color: #23845b;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.about-cta:hover {
+    background-color: #196b48;
+    border-color: #196b48;
+    color: #ffffff;
+}
+
+.about-cta-secondary {
+    background-color: #ffffff;
+    color: #23845b;
+}
+
+.about-cta-secondary:hover {
+    background-color: #e8f8ef;
+    color: #196b48;
+}
+
+.about-section {
+    padding: 60px 4%;
+    background-color: #ffffff;
+}
+
+.about-section-alt {
+    background-color: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+#how-it-works {
+    scroll-margin-top: 80px;
+}
+
+.about-section p {
+    max-width: 760px;
+    margin: 0 0 14px;
+    color: #4b5563;
+}
+
+.about-section p.about-lead {
+    max-width: 720px;
+    margin: 0 0 30px;
+    color: #6b7280;
+}
+
+.about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+}
+
+.about-card {
+    width: 31%;
+    margin-bottom: 20px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-top: 3px solid #23845b;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.about-card-number {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #23845b;
+}
+
+.about-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: #111827;
+}
+
+.about-card p {
+    margin: 0;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+.about-steps {
+    max-width: 760px;
+    margin: 0;
+    padding-left: 22px;
+    color: #4b5563;
+}
+
+.about-steps li {
+    margin-bottom: 10px;
+}
+
+.about-values {
+    max-width: 760px;
+    margin: 24px 0 0;
+    padding-left: 22px;
+    color: #4b5563;
+}
+
+.about-values li {
+    margin-bottom: 8px;
+}
+
+.about-team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-team li {
+    width: 23%;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.about-team strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+    color: #111827;
+}
+
+.about-team-role {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #23845b;
+}
+
+.about-closing {
+    padding: 60px 4%;
+    text-align: center;
+    background-color: #14532d;
+}
+
+.about-closing h2 {
+    color: #ffffff;
+}
+
+.about-closing p {
+    max-width: 600px;
+    margin: 0 auto 24px;
+    color: #c7e5d6;
+}
+
+.about-closing .about-cta {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #14532d;
+}
+
+.about-closing .about-cta:hover {
+    background-color: #e8f8ef;
+    border-color: #e8f8ef;
+    color: #14532d;
+}
+
+/* Phones */
+
+@media screen and (max-width: 768px) {
+
+    .about-hero {
+        padding: 50px 5% 45px;
+    }
+
+    .about-page h1 {
+        font-size: 28px;
+    }
+
+    .about-page h2 {
+        font-size: 22px;
+    }
+
+    .about-section,
+    .about-closing {
+        padding: 40px 5%;
+    }
+
+    .about-card {
+        width: 100%;
+    }
+
+    .about-team li {
+        width: 100%;
+    }
+}
