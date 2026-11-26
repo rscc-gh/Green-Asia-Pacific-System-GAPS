@@ -72,6 +72,10 @@
             require '../app/actions/redeem.php';
             break;
 
+        case 'loginprocess':
+            require '../app/actions/login.php';
+            break;
+
         default:
             http_response_code(404);
             require '../app/views/errors/404.php';

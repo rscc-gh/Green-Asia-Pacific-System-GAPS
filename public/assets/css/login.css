@@ -1,0 +1,140 @@
+.login-main {
+    --green-main: #01B636;
+    --green-mid:  #3BD16F;
+    --green-soft: #74E39A;
+    --grey-light: #E3E3E3;
+    --grey-mid:   #989898;
+    --black:      #1A1A1A;
+    --white:      #FFFFFF;
+}
+
+.login-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    padding: 56px 5%;
+    background: var(--white);
+    color: var(--black);
+}
+
+/* Left block GAPS picture placeholder hi ryan I pinjam your free gift pic dulu ya */
+.login-image {
+    flex: 0 1 380px;
+    aspect-ratio: 3 / 4;
+    border: 2px solid var(--black);
+    background: url('/uploads/vouchers/free_gift.png') center / cover no-repeat;
+
+}
+
+/* Right block is login credential side */
+.login-card {
+    flex: 0 1 480px;
+    padding: 36px 40px;
+    background: var(--grey-light);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.login-intro {
+    margin: 0 0 24px;
+    font-size: 1.1rem;
+}
+
+.login-card label {
+    display: block;
+    margin: 18px 0 6px;
+    font-size: 0.9rem;
+}
+
+.login-card input {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--black);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--black);
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.login-card input:focus-visible {
+    outline: 3px solid var(--green-mid);
+    outline-offset: 1px;
+}
+
+.login-card button {
+    display: block;
+    margin: 28px auto 0;
+    padding: 10px 44px;
+    border: 2px solid var(--green-main);
+    border-radius: 6px;
+    background: var(--green-main);
+    color: var(--white);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background: var(--green-mid);
+    border-color: var(--green-mid);
+}
+
+.login-signup {
+    display: block;
+    width: fit-content;
+    margin: 12px auto 0;
+    padding: 9px 28px;
+    border: 2px solid var(--green-main);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--green-main);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login-signup:hover {
+    background: var(--green-main);
+    color: var(--white);
+}
+
+.login-signup:focus-visible {
+    outline: 3px solid var(--green-mid);
+    outline-offset: 2px;
+}
+
+.login-error {
+    margin: 0 0 8px;
+    padding: 10px 12px;
+    border: 1px solid #A61B1B;
+    border-radius: 6px;
+    background: var(--white);
+    color: #A61B1B;
+}
+
+/* this I asked chat and it said phones will stack it and picture on top */
+@media (max-width: 800px) {
+    .login-main {
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 20px;
+    }
+
+    .login-image {
+        flex: none;
+        width: 100%;
+        max-width: 380px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .login-card {
+        flex: none;
+        width: 100%;
+        max-width: 480px;
+        padding: 24px;
+    }
+}
