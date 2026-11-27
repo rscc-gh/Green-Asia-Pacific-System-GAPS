@@ -1,0 +1,229 @@
+/* Main page */
+
+.badges-page {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.badges-page h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+
+/* Badge category section */
+.badge-section {
+    margin-bottom: 45px;
+    width: 100%;
+}
+
+.category-title {
+    display: inline-block;
+    background-color: #d9d9d9;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+
+/* Category heading */
+.category-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.category-title {
+    display: inline-block;
+    background-color: #d9d9d9;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* Info button */
+.info-wrapper {
+    position: relative;
+}
+
+.info-btn {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    background: white;
+    color: #555;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-btn:hover {
+    background: #ddd;
+}
+
+
+/* Info popup */
+.info-popup {
+    display: none;
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 220px;
+    padding: 12px;
+
+    background: white;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.5;
+
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+
+    z-index: 100;
+}
+
+.info-popup.show {
+    display: block;
+}
+
+
+
+
+
+
+
+/* Horizontal scrolling */
+.badge-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #898585;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Badge container */
+.badge-container {
+    display: grid;
+    grid-auto-flow: column;
+
+    /* Three badges visible at a time */
+    grid-auto-columns: calc((100% - 40px) / 3);
+
+    gap: 30px;
+    width: 100%;
+}
+
+
+/* Individual badge */
+.badge-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+}
+
+
+/* Badge image */
+.badge-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ddd;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Badge name */
+.badge-name {
+    margin: 8px 0 4px;
+    font-size: 18px;
+    color: greenyellow;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+/* Details hyperlink */
+.badge-details-btn {
+    display: block;
+    text-align: center;
+    color: lightblue;
+    text-decoration: underline;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.badge-details-btn:hover {
+    color: blue;
+}
+
+
+
+
+/* Modal background */
+
+.badge-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Modal content */
+
+.badge-modal-content {
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    max-width: 85%;
+    text-align: center;
+}
+
+.badge-modal-content h2 {
+    font-size: 22px;
+}
+
+.badge-modal-content p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Close button */
+
+.close-modal {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+
+    border: none;
+    background: none;
+    font-size: 26px;
+    cursor: pointer;
+}

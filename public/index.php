@@ -76,6 +76,14 @@
             require __DIR__ . '/../app/actions/login.php';
             break;
 
+        case 'badges':
+            require __DIR__ . '/../app/views/user/badges.php';
+            break;
+
+        case 'notifications':
+            require __DIR__ . '/../app/views/user/notifications.php';
+            break;
+
         default:
             http_response_code(404);
             require __DIR__ . '/../app/views/errors/404.php';
