@@ -72,6 +72,10 @@
             require __DIR__ . '/../app/actions/redeem.php';
             break;
 
+        case 'signupprocess':
+            require __DIR__ . '/../app/actions/signup.php';
+            break;
+
         case 'loginprocess':
             require __DIR__ . '/../app/actions/login.php';
             break;

@@ -10,12 +10,12 @@ include __DIR__ . '/../../config/conn.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rewards</title>
 
-    <link rel="stylesheet" href="/RWDD2507/public/assets/css/global.css">
-    <link rel="stylesheet" href="/RWDD2507/public/assets/css/user-header.css">
-    <link rel="stylesheet" href="/RWDD2507/public/assets/css/footer.css">
-    <link rel="stylesheet" href="/RWDD2507/public/assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/user-header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
 
-    <script src="/RWDD2507/public/assets/js/sidebar.js" defer></script>
+    <script src="assets/js/sidebar.js" defer></script>
 </head>
 
 <body>

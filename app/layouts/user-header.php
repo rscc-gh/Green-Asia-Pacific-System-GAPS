@@ -21,19 +21,19 @@
                 <!-- Sidebar Toggle -->
                 <button type="button" class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
-                <a href="/RWDD2507/public/?page=dashboard" class="main-logo">Logo</a>
+                <a href="?page=dashboard" class="main-logo">Logo</a>
 
                 <nav class="main-nav" id="mainNav">
-                    <a href="/RWDD2507/public/?page=dashboard" class="main-nav-link <?= $currentPage == 'dashboard' ? 'active' : '' ?>">Home</a>
-                    <a href="/RWDD2507/public/?page=activities" class="main-nav-link <?= $currentPage == 'activities' ? 'active' : '' ?>">Activities</a>
-                    <a href="/RWDD2507/public/?page=rewards" class="main-nav-link <?= $currentPage == 'rewards' ? 'active' : '' ?>">Rewards</a>
-                    <a href="/RWDD2507/public/?page=community" class="main-nav-link <?= $currentPage == 'community' ? 'active' : '' ?>">Community</a>
+                    <a href="?page=dashboard" class="main-nav-link <?= $currentPage == 'dashboard' ? 'active' : '' ?>">Home</a>
+                    <a href="?page=activities" class="main-nav-link <?= $currentPage == 'activities' ? 'active' : '' ?>">Activities</a>
+                    <a href="?page=rewards" class="main-nav-link <?= $currentPage == 'rewards' ? 'active' : '' ?>">Rewards</a>
+                    <a href="?page=community" class="main-nav-link <?= $currentPage == 'community' ? 'active' : '' ?>">Community</a>
                 </nav>
 
             </div>
 
             <div class="main-header-right">
-                <a href="/RWDD2507/public/?page=myprofile" class="profile-link">Profile</a>
+                <a href="?page=myprofile" class="profile-link">Profile</a>
             </div>
 
         </div>

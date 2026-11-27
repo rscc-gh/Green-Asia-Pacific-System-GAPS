@@ -18,11 +18,11 @@
         <!-- Navigation -->
         <nav class="sidebar-nav">
 
-            <a href="/RWDD2507/public/?page=dashboard" class="nav-link <?= $currentPage == 'page1' ? 'active' : '' ?>">Page 1</a>
+            <a href="?page=dashboard" class="nav-link <?= $currentPage == 'page1' ? 'active' : '' ?>">Page 1</a>
 
-            <a href="/RWDD2507/public/?page=dashboard" class="nav-link <?= $currentPage == 'page2' ? 'active' : '' ?>">Page 2</a>
+            <a href="?page=dashboard" class="nav-link <?= $currentPage == 'page2' ? 'active' : '' ?>">Page 2</a>
 
-            <a href="/RWDD2507/public/?page=dashboard" class="nav-link <?= $currentPage == 'page3' ? 'active' : '' ?>">Page 3</a>
+            <a href="?page=dashboard" class="nav-link <?= $currentPage == 'page3' ? 'active' : '' ?>">Page 3</a>
 
         </nav>
 

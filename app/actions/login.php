@@ -3,7 +3,7 @@
 
     //Only accept form submissions
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-        header('Location: /RWDD2507/public/?page=login');
+        header('Location: ?page=login');
         exit;
     }
 
@@ -12,7 +12,7 @@
 
     function loginFail($message) {
         $_SESSION['login_error'] = $message;
-        header('Location: /RWDD2507/public/?page=login');
+        header('Location: ?page=login');
         exit;
     }
 
@@ -51,5 +51,5 @@
     $_SESSION['full_name'] = $user['full_name'];
     $_SESSION['user_role'] = $user['user_role'];
 
-    header('Location: /RWDD2507/public/?page=dashboard');
+    header('Location: ?page=dashboard');
     exit;
