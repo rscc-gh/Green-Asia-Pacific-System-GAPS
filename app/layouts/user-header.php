@@ -9,11 +9,11 @@
 
     if (isset($_SESSION['user_id'])) {
         $userId = $_SESSION['user_id'];
-        $query = "SELECT COUNT(*) FROM notification_reads WHERE user_id = '{$userId}' AND status = 'Unread'";
-        $result = mysqli_query($conn, $query);
+        $userHeaderQuery = "SELECT COUNT(*) FROM notification_reads WHERE user_id = '{$userId}' AND status = 'Unread'";
+        $userHeaderResult = mysqli_query($conn, $userHeaderQuery);
 
-        if ($result) {
-            $row = mysqli_fetch_row($result);
+        if ($userHeaderResult) {
+            $row = mysqli_fetch_row($userHeaderResult);
             $unreadNotifications = (int) $row[0];
         }
     }
