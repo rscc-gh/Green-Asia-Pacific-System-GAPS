@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2026 at 11:10 AM
+-- Generation Time: Nov 27, 2026 at 06:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -101,6 +101,24 @@ CREATE TABLE `badges` (
   `streak_required` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `badges`
+--
+
+INSERT INTO `badges` (`badge_id`, `badge_name`, `image_path`, `events_required`, `goals_required`, `streak_required`) VALUES
+(1, 'Activity Starter', 'uploads/badges/events_1.png', 1, 0, 0),
+(2, 'Activity Novice', 'uploads/badges/events_5.png', 5, 0, 0),
+(3, 'Activity Veteran', 'uploads/badges/events_10.png', 10, 0, 0),
+(4, 'Activity Master', 'uploads/badges/events_25.png', 25, 0, 0),
+(5, 'Basic Achiever', 'uploads/badges/goals_1.png', 0, 1, 0),
+(6, 'Goal Scorer', 'uploads/badges/goals_10.png', 0, 10, 0),
+(7, 'Proficient Worker', 'uploads/badges/goals_25.png', 0, 25, 0),
+(8, 'Overachiever', 'uploads/badges/goals_50.png', 0, 50, 0),
+(9, 'Day 1', 'uploads/badges/streak_1.png', 0, 0, 1),
+(10, 'Dedicated', 'uploads/badges/streak_7.png', 0, 0, 7),
+(11, 'Weekly Visitor', 'uploads/badges/streak_30.png', 0, 0, 30),
+(12, 'Green Hero', 'uploads/badges/streak_100.png', 0, 0, 100);
+
 -- --------------------------------------------------------
 
 --
@@ -136,7 +154,7 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`comment_id`, `user_id`, `post_id`, `content`, `date_created`, `status`) VALUES
 (1, 3, 2, 'First', '2026-11-26 18:08:48', 'Active'),
 (2, 4, 4, 'What he wrote down', '2026-11-26 18:08:48', 'Active'),
-(3, 8, 6, 'He''s nervous', '2026-11-26 18:08:48', 'Active'),
+(3, 8, 6, 'He\'s nervous', '2026-11-26 18:08:48', 'Active'),
 (4, 3, 8, 'His palms are sweaty', '2026-11-26 18:08:48', 'Active'),
 (5, 11, 2, 'Knees weak', '2026-11-26 18:08:48', 'Active'),
 (6, 12, 4, 'Arms are heavy', '2026-11-26 18:08:48', 'Active'),
@@ -144,8 +162,8 @@ INSERT INTO `comments` (`comment_id`, `user_id`, `post_id`, `content`, `date_cre
 (8, 7, 7, 'To drop bombs but he keeps on forgettin', '2026-11-26 18:08:48', 'Active'),
 (9, 4, 1, 'The whole crowd goes so loud', '2026-11-26 18:08:48', 'Active'),
 (10, 4, 3, 'He opens his mouth but the words wont come out', '2026-11-26 18:08:48', 'Active'),
-(11, 4, 7, 'He''s chokin, how, everybody''s jokin now', '2026-11-26 18:08:48', 'Active'),
-(12, 4, 6, 'The clock''s run out. Time''s up. Over blaow.', '2026-11-26 18:08:48', 'Active');
+(11, 4, 7, 'He\'s chokin, how, everybody\'s jokin now', '2026-11-26 18:08:48', 'Active'),
+(12, 4, 6, 'The clock\'s run out. Time\'s up. Over blaow.', '2026-11-26 18:08:48', 'Active');
 
 -- --------------------------------------------------------
 
@@ -439,7 +457,7 @@ ALTER TABLE `activities`
 -- AUTO_INCREMENT for table `badges`
 --
 ALTER TABLE `badges`
-  MODIFY `badge_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `badge_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `comments`
