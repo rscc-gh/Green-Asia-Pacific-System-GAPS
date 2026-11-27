@@ -19,6 +19,32 @@
     box-sizing: border-box;
 }
 
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    font-size: 26px;
+    line-height: 1;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
 /* Left section: Logo + Navigation */
 .main-header-left {
     display: flex;

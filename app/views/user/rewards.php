@@ -3,7 +3,7 @@ include __DIR__ . '/../../config/conn.php';
 
 $query = "SELECT * FROM rewards WHERE status = 'Active' AND quantity > 0 AND (expiry_date >= CURDATE() OR expiry_date IS NULL)";
 
-$result = mysqli_query($conn, $query);
+$rewardResult = mysqli_query($conn, $query);
 
 $isMember = isset($_SESSION['user_id']) && ($_SESSION['user_role'] === "member");
 $totalPoints = 0;
@@ -78,10 +78,10 @@ if ($isMember) {
                 data-is-member="<?= $isMember ? '1' : '0' ?>"
                 data-user-points="<?= $totalPoints ?>">
 
-                <?php if (mysqli_num_rows($result) > 0): ?>
+                <?php if (mysqli_num_rows($rewardResult) > 0): ?>
 
                     <?php
-                    while ($reward = mysqli_fetch_assoc($result)):
+                    while ($reward = mysqli_fetch_assoc($rewardResult)):
                     ?>
 
                         <div class="reward-card">
